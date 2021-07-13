@@ -16,9 +16,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/api/v1/sign-in").permitAll()
+                .antMatchers("/", "/csrf", "/api/v1/sign-in",
+                        "/v2/api-docs",
+                        "/configuration/ui",
+                        "/swagger-resources",
+                        "/configuration/security",
+                        "/swagger-ui",
+                        "/webjars/**",
+                        "/swagger-resources/configuration/ui",
+                        "/swagger-ui.html",
+                        "/swagger-resources/configuration/security").permitAll()
                 .antMatchers(HttpMethod.GET, "/ping").permitAll()
-                .antMatchers(HttpMethod.GET, "/v3/api-docs").permitAll()
                 .antMatchers(HttpMethod.GET, "/fake").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/v1/fresh-products/inboundorder").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.PUT, "/api/v1/fresh-products/inboundorder").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
@@ -28,8 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/api/v1/fresh-products/warehouse").hasAnyAuthority("ROLE_EMPLOYEE","ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/v1/fresh-products/duedate").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.GET, "/api/v1/fresh-products/duedate/list").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
-
-
                 .anyRequest().authenticated();
     }
 }

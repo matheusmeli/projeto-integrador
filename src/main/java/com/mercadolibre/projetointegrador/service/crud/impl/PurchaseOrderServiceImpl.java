@@ -6,14 +6,11 @@ import com.mercadolibre.projetointegrador.model.*;
 import com.mercadolibre.projetointegrador.repository.PurchaseOrderRepository;
 import com.mercadolibre.projetointegrador.service.crud.ICRUD;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
-
-import java.util.*;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RequiredArgsConstructor

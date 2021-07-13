@@ -1,6 +1,5 @@
 package com.mercadolibre.projetointegrador.unit.service;
 
-import com.mercadolibre.projetointegrador.model.InboundOrder;
 import com.mercadolibre.projetointegrador.model.Supervisor;
 import com.mercadolibre.projetointegrador.service.crud.impl.SupervisorServiceImpl;
 import org.junit.Test;

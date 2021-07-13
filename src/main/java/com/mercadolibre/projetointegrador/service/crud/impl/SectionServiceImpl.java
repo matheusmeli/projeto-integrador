@@ -2,7 +2,6 @@ package com.mercadolibre.projetointegrador.service.crud.impl;
 
 import com.mercadolibre.projetointegrador.dtos.SectionDTO;
 import com.mercadolibre.projetointegrador.exceptions.NotFoundException;
-import com.mercadolibre.projetointegrador.model.Product;
 import com.mercadolibre.projetointegrador.model.Section;
 import com.mercadolibre.projetointegrador.repository.SectionRepository;
 import com.mercadolibre.projetointegrador.service.crud.ICRUD;

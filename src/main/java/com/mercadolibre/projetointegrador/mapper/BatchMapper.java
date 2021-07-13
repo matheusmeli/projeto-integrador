@@ -1,9 +1,7 @@
 package com.mercadolibre.projetointegrador.mapper;
 
 import com.mercadolibre.projetointegrador.dtos.BatchDTO;
-
 import com.mercadolibre.projetointegrador.dtos.response.BatchDueDateResponseDTO;
-
 import com.mercadolibre.projetointegrador.model.Batch;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;

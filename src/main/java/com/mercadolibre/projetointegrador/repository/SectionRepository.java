@@ -1,6 +1,5 @@
 package com.mercadolibre.projetointegrador.repository;
 
-import com.mercadolibre.projetointegrador.model.Product;
 import com.mercadolibre.projetointegrador.model.Section;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,10 +1,7 @@
 package com.mercadolibre.projetointegrador.controller;
 
 
-import com.mercadolibre.projetointegrador.model.Product;
 import com.mercadolibre.projetointegrador.model.Seller;
-import com.mercadolibre.projetointegrador.service.crud.impl.ProductServiceImpl;
-import com.mercadolibre.projetointegrador.service.crud.impl.SectionServiceImpl;
 import com.mercadolibre.projetointegrador.service.crud.impl.SellerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

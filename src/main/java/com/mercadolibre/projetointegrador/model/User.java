@@ -1,6 +1,5 @@
 package com.mercadolibre.projetointegrador.model;
 
-import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

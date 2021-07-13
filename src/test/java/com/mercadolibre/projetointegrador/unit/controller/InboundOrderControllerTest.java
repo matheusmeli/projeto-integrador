@@ -7,23 +7,13 @@ import com.mercadolibre.projetointegrador.dtos.BatchDTO;
 import com.mercadolibre.projetointegrador.dtos.InboundOrderDTO;
 import com.mercadolibre.projetointegrador.dtos.SectionDTO;
 import com.mercadolibre.projetointegrador.dtos.response.InboundOrderResponseDTO;
-import com.mercadolibre.projetointegrador.model.Batch;
-import com.mercadolibre.projetointegrador.model.Employee;
 import com.mercadolibre.projetointegrador.service.crud.impl.InboundOrderServiceImpl;
-import com.mercadolibre.projetointegrador.service.crud.impl.UserServiceImpl;
-import com.mercadolibre.projetointegrador.service.impl.SessionServiceImpl;
-import io.jsonwebtoken.Jwts;
-import org.hamcrest.Matchers;
-import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.TestPropertySource;
@@ -38,9 +28,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

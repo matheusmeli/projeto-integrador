@@ -1,7 +1,6 @@
 package com.mercadolibre.projetointegrador.service.crud.impl;
 
 import com.mercadolibre.projetointegrador.exceptions.ApiException;
-import com.mercadolibre.projetointegrador.model.Employee;
 import com.mercadolibre.projetointegrador.model.User;
 import com.mercadolibre.projetointegrador.repository.UserRepository;
 import lombok.RequiredArgsConstructor;

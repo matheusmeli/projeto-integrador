@@ -1,15 +1,12 @@
 package com.mercadolibre.projetointegrador.unit.service;
 
 import com.mercadolibre.projetointegrador.dtos.response.UserResponseDTO;
-import com.mercadolibre.projetointegrador.exceptions.ApiException;
 import com.mercadolibre.projetointegrador.model.User;
 import com.mercadolibre.projetointegrador.service.crud.impl.UserServiceImpl;
 import com.mercadolibre.projetointegrador.service.impl.SessionServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;

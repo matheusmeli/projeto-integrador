@@ -1,9 +1,7 @@
 package com.mercadolibre.projetointegrador.config;
 
 import com.mercadolibre.projetointegrador.dtos.BatchDTO;
-
 import com.mercadolibre.projetointegrador.dtos.response.BatchDueDateResponseDTO;
-
 import com.mercadolibre.projetointegrador.model.Batch;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.PropertyMap;
