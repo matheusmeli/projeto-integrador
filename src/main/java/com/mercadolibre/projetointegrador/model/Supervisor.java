@@ -1,5 +1,6 @@
 package com.mercadolibre.projetointegrador.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,5 +21,6 @@ import java.util.List;
 public class Supervisor extends Employee{
 
     @OneToMany(mappedBy = "supervisor")
+    @JsonIgnore
     private List<InboundOrder> inboundOrders = new ArrayList<>();
 }

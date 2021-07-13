@@ -161,11 +161,15 @@ public class ProductServiceImpl implements ICRUD<Product> {
             ProductSectionResponseDTO responseDTO =
                     ProductSectionResponseDTO
                             .builder()
-                            .productId(productId)
+                            .productId(String.valueOf(productId))
                             .section(sectionDTO)
                             .batchStock(entry.getValue()
                                     .stream()
-                                    .map(batch -> modelMapper.map(batch, SimpleBatchResponseDTO.class))
+                                    .map(batch -> SimpleBatchResponseDTO.builder()
+                                            .id(String.valueOf(batch.getId()))
+                                            .dueDate(batch.getDueDate().toString())
+                                            .currentQuantity(batch.getCurrentQuantity())
+                                            .build())
                                     .sorted(sortingComparator)
                                     .collect(Collectors.toList()))
                             .build();

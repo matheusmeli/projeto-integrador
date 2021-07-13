@@ -1,5 +1,6 @@
 package com.mercadolibre.projetointegrador.dtos.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.mercadolibre.projetointegrador.dtos.SectionDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,8 @@ public class ProductSectionResponseDTO {
 
     private SectionDTO section;
 
-    private Long productId;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String productId;
 
     private List<SimpleBatchResponseDTO> batchStock = new ArrayList<>();
 

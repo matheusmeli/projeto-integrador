@@ -1,5 +1,6 @@
 package com.mercadolibre.projetointegrador.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,6 +22,7 @@ public class Warehouse {
     private String name;
 
     @OneToMany(mappedBy = "warehouse")
+    @JsonIgnore
     List<Section> sections = new ArrayList<>();
 
     @OneToMany(mappedBy = "warehouse")
