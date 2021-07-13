@@ -2,11 +2,7 @@ package com.mercadolibre.projetointegrador.controller;
 
 import com.mercadolibre.projetointegrador.model.Batch;
 import com.mercadolibre.projetointegrador.service.impl.ExpiredBatchServiceImpl;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,9 +21,7 @@ public class ExpiredBatchController {
         this.expiredBatchService = expiredBatchService;
     }
 
-    @Operation(summary = "US06 - Remove expired Batches", responses = {
-            @ApiResponse(description = "Successful Operation", responseCode = "200", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Batch.class))),
-    })
+    @ApiOperation("US06 - Check for due Date")
     @GetMapping(name = "/expired")
     @ResponseStatus(HttpStatus.OK)
     public List<Batch> checkForDueDate() {
