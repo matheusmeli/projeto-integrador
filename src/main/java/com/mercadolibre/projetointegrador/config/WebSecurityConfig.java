@@ -28,6 +28,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/swagger-resources/configuration/security").permitAll()
                 .antMatchers(HttpMethod.GET, "/ping").permitAll()
                 .antMatchers(HttpMethod.GET, "/fake").permitAll()
+                .antMatchers(HttpMethod.GET,"/api/v1/fresh-products/duedate/sections").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.POST, "/api/v1/fresh-products/inboundorder").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.PUT, "/api/v1/fresh-products/inboundorder").hasAnyAuthority("ROLE_SUPERVISOR", "ROLE_ADMIN")
                 .antMatchers(HttpMethod.POST, "/api/v1/fresh-products/orders").hasAnyAuthority("ROLE_BUYER", "ROLE_ADMIN")

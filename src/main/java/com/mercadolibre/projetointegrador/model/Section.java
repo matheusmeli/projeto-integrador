@@ -21,6 +21,7 @@ public class Section {
     private String sectionCode;
 
     @OneToMany(mappedBy = "section")
+    @JsonIgnore
     private List<InboundOrder> inboundOrders;
 
     @ManyToOne

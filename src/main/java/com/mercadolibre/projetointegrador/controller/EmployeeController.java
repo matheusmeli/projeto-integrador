@@ -6,10 +6,12 @@ import com.mercadolibre.projetointegrador.service.crud.impl.EmployeeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 import java.util.List;
 
+@ApiIgnore
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/v1/fresh-products/employees")

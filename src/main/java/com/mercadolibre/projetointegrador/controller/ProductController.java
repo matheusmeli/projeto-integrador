@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -22,6 +23,7 @@ public class ProductController {
 
     private final ProductServiceImpl productService;
 
+    @ApiIgnore
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.CREATED)
     public Product update(
@@ -29,6 +31,7 @@ public class ProductController {
         return productService.update(product);
     }
 
+    @ApiIgnore
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String delete(
@@ -44,19 +47,21 @@ public class ProductController {
         return productService.findAll();
     }
 
+    @ApiIgnore
     @GetMapping("/id/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Product findById(@PathVariable Long id){
         return productService.findById(id);
     }
 
+    @ApiIgnore
     @GetMapping("/name/{name}")
     @ResponseStatus(HttpStatus.OK)
     public Product findByName(@PathVariable String name){
         return productService.findByName(name);
     }
 
-
+    @ApiIgnore
     @GetMapping("/seller/{name}")
     @ResponseStatus(HttpStatus.OK)
     public List<Product> findAllBySellerName(@PathVariable String name){

@@ -5,6 +5,15 @@ import com.mercadolibre.projetointegrador.dtos.response.BatchDueDateResponseDTO;
 import com.mercadolibre.projetointegrador.service.crud.impl.BatchServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import com.mercadolibre.projetointegrador.dtos.response.ProductSectionResponseDTO;
+import com.mercadolibre.projetointegrador.dtos.response.WarehouseStockResponseDTO;
+import com.mercadolibre.projetointegrador.model.InboundOrder;
+import com.mercadolibre.projetointegrador.service.crud.impl.BatchServiceImpl;
+import com.mercadolibre.projetointegrador.service.impl.SessionServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -34,6 +43,14 @@ public class BatchController {
                                                            @RequestParam(defaultValue = "asc") String order) {
         return batchService.findByDueDateCategoryBetweenDates(category, days, order);
     }
+
+    @GetMapping("/sections")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductSectionResponseDTO> findExpiringProductByWarehouse(@RequestParam int days,
+                                                             @RequestHeader("Authorization") String token){
+        return batchService.findExpiringProductByWarehouse(days, SessionServiceImpl.getUsername(token));
+    }
+
 
 
 }
